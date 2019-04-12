@@ -49,5 +49,24 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
-  }
+  },
+  updateMessage(id, updatedMessage, callback){
+     return Message.findByPk(id)
+     .then((message) => {
+       if(!message){
+         return callback("Message not found");
+       }
+
+//#1
+       message.update(updatedMessage, {
+         fields: Object.keys(updatedMessage)
+       })
+       .then(() => {
+         callback(null, message);
+       })
+       .catch((err) => {
+         callback(err);
+       });
+     });
+   }
 }

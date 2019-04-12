@@ -53,6 +53,28 @@ module.exports = {
       res.redirect(303, "/messages")
     }
   });
-}
+},
+edit(req, res, next){
+    messageQueries.getMessage(req.params.id, (err, message) => {
+      if(err || message == null){
+        res.redirect(404, "/");
+      } else {
+        res.render("messages/edit", {message});
+      }
+    });
+  },
+  update(req, res, next){
+
+//#1
+    messageQueries.updateMessage(req.params.id, req.body, (err, message) => {
+
+//#2
+      if(err || message == null){
+        res.redirect(404, `/messages/${req.params.id}/edit`);
+      } else {
+        res.redirect(`/messages/${message.id}`);
+      }
+    });
+  }
 
 }

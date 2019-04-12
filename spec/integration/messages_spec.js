@@ -131,4 +131,45 @@ describe("routes : messages", () => {
 
  });
 
+ describe("GET /messages/:id/edit", () => {
+
+   it("should render a view with an edit message form", (done) => {
+     request.get(`${base}${this.message.id}/edit`, (err, res, body) => {
+       expect(err).toBeNull();
+       expect(body).toContain("Edit Message");
+       expect(body).toContain("John");
+       done();
+     });
+   });
+
+ });
+ describe("POST /messages/:id/update", () => {
+
+     it("should update the message with the given values", (done) => {
+        const options = {
+           url: `${base}${this.message.id}/update`,
+           form: {
+             name: "John Smith",
+             notes: "dees nutz"
+           }
+         };
+//#1
+         request.post(options,
+           (err, res, body) => {
+
+           expect(err).toBeNull();
+//#2
+           Message.findOne({
+             where: { id: this.message.id }
+           })
+           .then((message) => {
+             expect(message.name).toBe("John Smith");
+             expect(message.notes).toBe("dees nutz");
+             done();
+           });
+         });
+     });
+
+   });
+
   });
