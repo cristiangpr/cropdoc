@@ -13,5 +13,29 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  addMessage(newMessage, callback){
+   return Message.create({
+     name: newMessage.name,
+     content: newMessage.content,
+     email: newMessage.email,
+     phone: newMessage.phone
+   })
+   .then((message) => {
+     callback(null, message);
+   })
+   .catch((err) => {
+     callback(err);
+   })
+ },
+ getMessage(id, callback){
+    return Message.findByPk(id)
+    .then((message) => {
+      callback(null, message);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
 }

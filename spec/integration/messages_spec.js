@@ -37,10 +37,69 @@ describe("routes : messages", () => {
          expect(res.statusCode).toBe(200);
          expect(err).toBeNull();
          expect(body).toContain("John");
-      
+
          done();
        });
      });
+
+     describe("GET /messages/new", () => {
+
+  it("should render a new message form", (done) => {
+    request.get(`${base}/new`, (err, res, body) => {
+      expect(err).toBeNull();
+      expect(body).toContain("Contact Us");
+      done();
+    });
+  });
+
+});
    });
+
+   describe("POST /messages/create", () => {
+     const options = {
+       url: `${base}/create`,
+       form: {
+         name: "Jack Freestone",
+         content: "I wanna cropdoc",
+         email: "jack@freestone.com",
+         phone: 1234567890
+       }
+     };
+
+     it("should create a new message and redirect", (done) => {
+
+//#1
+       request.post(options,
+
+//#2
+         (err, res, body) => {
+           Message.findOne({where: {name: "Jack Freestone"}})
+           .then((message) => {
+             expect(res.statusCode).toBe(303);
+             expect(message.email).toBe("jack@freestone.com");
+             expect(message.content).toBe("I wanna cropdoc");
+             done();
+           })
+           .catch((err) => {
+             console.log(err);
+             done();
+           });
+         }
+       );
+     });
+   });
+
+   describe("GET /messages/:id", () => {
+
+   it("should render a view with the selected message", (done) => {
+
+     request.get(`${base}/1`, (err, res, body) => {
+       expect(err).toBeNull();
+       expect(body).toContain("There is a lot of them");
+       done();
+     });
+   });
+
+ });
 
   });
