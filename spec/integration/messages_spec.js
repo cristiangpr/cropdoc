@@ -1,6 +1,6 @@
 const request = require("request");
 const server = require("../../src/server");
-const base = "http://localhost:3000/messages";
+const base = "http://localhost:3000/messages/";
 const sequelize = require("../../src/db/models/index").sequelize;
  const Message = require("../../src/db/models").Message;
 
@@ -45,7 +45,7 @@ describe("routes : messages", () => {
      describe("GET /messages/new", () => {
 
   it("should render a new message form", (done) => {
-    request.get(`${base}/new`, (err, res, body) => {
+    request.get(`${base}new`, (err, res, body) => {
       expect(err).toBeNull();
       expect(body).toContain("Contact Us");
       done();
@@ -57,7 +57,7 @@ describe("routes : messages", () => {
 
    describe("POST /messages/create", () => {
      const options = {
-       url: `${base}/create`,
+       url: `${base}create`,
        form: {
          name: "Jack Freestone",
          content: "I wanna cropdoc",
@@ -93,11 +93,40 @@ describe("routes : messages", () => {
 
    it("should render a view with the selected message", (done) => {
 
-     request.get(`${base}/1`, (err, res, body) => {
+      request.get(`${base}${this.message.id}`, (err, res, body) => {
        expect(err).toBeNull();
        expect(body).toContain("There is a lot of them");
        done();
      });
+   });
+
+ });
+
+ describe("POST /messages/:id/destroy", () => {
+
+   it("should delete the message with the associated ID", (done) => {
+
+//#1
+     Message.findAll()
+     .then((messages) => {
+
+//#2
+       const messageCountBeforeDelete = messages.length;
+
+       expect(messageCountBeforeDelete).toBe(1);
+
+//#3
+       request.post(`${base}${this.message.id}/destroy`, (err, res, body) => {
+         Message.findAll()
+         .then((messages) => {
+           expect(err).toBeNull();
+           expect(messages.length).toBe(messageCountBeforeDelete - 1);
+           done();
+         })
+
+       });
+     });
+
    });
 
  });

@@ -37,5 +37,17 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  deleteMessage(id, callback){
+    return Message.destroy({
+      where: {id}
+    })
+    .then((message) => {
+      callback(null, message);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
 }

@@ -28,7 +28,7 @@ module.exports = {
      if(err){
        res.redirect(500, "/messages/new");
      } else {
-       res.redirect(303, `/messages/${message.id}`);
+       res.redirect(303, `/`);
      }
    });
  },
@@ -44,6 +44,15 @@ module.exports = {
        res.render("messages/show", {message});
      }
    });
- }
+ },
+ destroy(req, res, next){
+  messageQueries.deleteMessage(req.params.id, (err, message) => {
+    if(err){
+      res.redirect(500, `/messages/${message.id}`)
+    } else {
+      res.redirect(303, "/messages")
+    }
+  });
+}
 
 }

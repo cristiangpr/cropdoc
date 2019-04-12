@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     content: DataTypes.STRING,
     email: DataTypes.STRING,
-    phone: DataTypes.BIGINT
+    phone: DataTypes.STRING
   }, {});
   Message.associate = function(models) {
     // associations can be defined here

@@ -5,6 +5,7 @@ const messageController = require("../controllers/messageController");
  router.get("/messages/new", messageController.new);
  router.post("/messages/create", messageController.create);
   router.get("/messages/:id", messageController.show);
+   router.post("/messages/:id/destroy", messageController.destroy);
 
 
 
