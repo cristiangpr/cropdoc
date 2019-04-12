@@ -62,13 +62,13 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="name">Full Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                  <input value="<%= message.name %>"  type="text" class="form-control" name="name" placeholder="Enter Name">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input value="<%= message.email %>"  type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                   <small class="text-muted" id="emailHelp">email address must be a valid address</small>
                 </div>
               </div>
@@ -77,21 +77,21 @@
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="phone">Phone</label>
-                  <input type="tel"  class="form-control" name="phone" placeholder="Phone #">
+                    <input value="<%= message.phone %>"  type="tel"  class="form-control" name="phone" placeholder="Phone #">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label for="content">Message</label>
-                  <textarea name="content"  cols="30" rows="5" class="form-control" placeholder="Send us a message"></textarea>
+                  <textarea name="content"  cols="30" rows="5" class="form-control" placeholder="Send us a message"><%= message.content %></textarea>
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
                   <label for="notes">Notes</label>
-                  <textarea name="notes"  cols="30" rows="5" class="form-control" placeholder="Add Notes"></textarea>
+                  <textarea name="notes"  cols="30" rows="5" class="form-control" placeholder="Add Notes"><%= message.notes %></textarea>
                 </div>
               </div>
 
@@ -186,6 +186,7 @@
 
       </div>
 
+    </div>
     </div>
 
     <% include ../partials/footer.ejs %>
