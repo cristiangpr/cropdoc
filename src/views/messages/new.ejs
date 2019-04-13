@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>The Crop Doctor</title>
+    <title>the Crop Doctor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Work+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
- <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/magnific-popup.css">
     <link rel="stylesheet" href="/css/jquery-ui.css">
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
@@ -26,10 +26,10 @@
 
     <link rel="stylesheet" href="/css/style.css">
 
-
-
   </head>
   <body style="background-image: url('/images/medical-background.jpg');">
+
+
 
   <div class="site-wrap">
 
@@ -47,15 +47,6 @@
 
     <% include ../partials/navbar.ejs %>
 
-    <div class="site-blocks-cover inner-page overlay" style="background-image: url(/images/farm.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-md-7 text-center" data-aos="fade">
-          <h1 class="text-uppercase">Contact Us</h1>
-          <span class="caption d-block text-white"></span>
-        </div>
-      </div>
-    </div>
-
     <div class="py-5 bg-light">
       <div class="container">
         <div class="row">
@@ -64,34 +55,33 @@
 
 
 
-           <form action="create" method="post"> <class="p-5 bg-white">
+            <form action="create" method="post" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="name">Full Name</label>
-                  <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                  <label class="font-weight-bold" for="name">Full Name</label>
+                  <input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                  <small class="text-muted" id="emailHelp">email address must be a valid address</small>
+                  <label class="font-weight-bold" for="email">Email</label>
+                  <input type="email" name="emai" id="email" class="form-control" placeholder="Email Address">
                 </div>
               </div>
 
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label for="phone">Phone</label>
-                  <input type="tel"  class="form-control" name="phone" placeholder="Phone #">
+                  <label class="font-weight-bold" for="phone">Phone</label>
+                  <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone #">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <label for="content">Message</label>
-                  <textarea name="content"  cols="30" rows="5" class="form-control" placeholder="Send us a message"></textarea>
+                  <label class="font-weight-bold" for="content">Message</label>
+                  <textarea name="content" id="message" cols="30" rows="5" class="form-control" placeholder="Send us a meesage"></textarea>
                 </div>
               </div>
 
@@ -124,85 +114,52 @@
         </div>
       </div>
     </div>
-
-    <div class="site-section block-14 nav-direction-white">
-
-      <div class="container">
-
-        <div class="row mb-5">
-          <div class="col-md-12">
-            <h2 class="site-section-heading text-center text-uppercase">Testimonies</h2>
-          </div>
-        </div>
-
-        <div class="nonloop-block-14 owl-carousel">
-
-          <div class="p-5">
-            <div class="d-block block-testimony w-75 mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="/images/person_1.jpg" alt="Image" class="img-fluid rounded-circle">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Katie Johnson</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-          </div>
-          <div class="p-5">
-            <div class="d-block block-testimony w-75 mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="/images/person_2.jpg" alt="Image" class="img-fluid rounded-circle">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Jun Mars</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-          </div>
-          <div class="p-5">
-            <div class="d-block block-testimony w-75 mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="/images/person_3.jpg" alt="Image" class="img-fluid rounded-circle">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Shane Holmes</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-          </div>
-          <div class="p-5">
-            <div class="d-block block-testimony w-75 mx-auto text-center">
-              <div class="person w-25 mx-auto mb-4">
-                <img src="/images/person_4.jpg" alt="Image" class="img-fluid rounded-circle">
-              </div>
-              <div>
-                <h2 class="h5 mb-4">Mark Johnson</h2>
-                <blockquote>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias accusantium qui optio, possimus necessitatibus voluptate aliquam velit nostrum tempora ipsam!&rdquo;</blockquote>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
 </div>
+
+
     <% include ../partials/footer.ejs %>
 
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <script src="/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="/js/jquery-ui.js"></script>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/owl.carousel.min.js"></script>
-    <script src="/js/jquery.stellar.min.js"></script>
-    <script src="/js/jquery.countdown.min.js"></script>
-    <script src="/js/jquery.magnific-popup.min.js"></script>
-    <script src="/js/bootstrap-datepicker.min.js"></script>
-    <script src="/js/aos.js"></script>
 
-    <script src="/js/main.js"></script>
+          <div class="col-md-2">
+            <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">Social Icons</h3></div>
+              <div class="col-md-12">
+                <p>
+                  <a href="#" class="pb-2 pr-2 pl-0"><span class="icon-facebook"></span></a>
+                  <a href="#" class="p-2"><span class="icon-twitter"></span></a>
+                  <a href="#" class="p-2"><span class="icon-instagram"></span></a>
+                  <a href="#" class="p-2"><span class="icon-vimeo"></span></a>
+
+                </p>
+              </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.countdown.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/aos.js"></script>
+
+  <script src="js/main.js"></script>
 
   </body>
 </html>
