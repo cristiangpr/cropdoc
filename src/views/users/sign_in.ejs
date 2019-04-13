@@ -43,9 +43,10 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-  <% include ../partials/messages.ejs %>
+
 
     <% include ../partials/navbar.ejs %>
+    <h2>Sign in</h2>
 
     <div class="py-5 bg-light">
       <div class="container">
@@ -55,35 +56,22 @@
 
 
 
-            <form action="create" method="post" class="p-5 bg-white">
+            <form action="sign_in" method="post" class="p-5 bg-white">
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="name">Full Name</label>
-                  <input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
-                </div>
-              </div>
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" name="emai" id="email" class="form-control" placeholder="Email Address">
+                  <label class="font-weight-bold" for="username">Username</label>
+                  <input type="text" name="username" id="username" class="form-control" placeholder="Username">
                 </div>
               </div>
 
 
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="phone">Phone</label>
-                  <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone #">
-                </div>
-              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                 <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
+                  <small class="text-muted" id="passwordHelp"</small>
+       </div>
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="content">Message</label>
-                  <textarea name="content" id="message" cols="30" rows="5" class="form-control" placeholder="Send us a meesage"></textarea>
-                </div>
-              </div>
 
               <div class="row form-group">
                 <div class="col-md-12">

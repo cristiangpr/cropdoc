@@ -43,14 +43,16 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div> <!-- .site-mobile-menu -->
-  <% include ../partials/messages.ejs %>
+
 
     <% include ../partials/navbar.ejs %>
+      <% include ../partials/messages.ejs %>
+
 
     <div class="py-5 bg-light">
       <div class="container">
         <div class="row">
-
+  <h2>Create User</h2>
           <div class="col-md-12 col-lg-8 mb-5">
 
 
@@ -59,31 +61,28 @@
 
               <div class="row form-group">
                 <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="name">Full Name</label>
-                  <input type="text" name="name" id="name" class="form-control" placeholder="Full Name">
+                  <label class="font-weight-bold" for="username">Username</label>
+                  <input type="text" name="username" id="username" class="form-control" placeholder="Username">
                 </div>
               </div>
               <div class="row form-group">
                 <div class="col-md-12">
                   <label class="font-weight-bold" for="email">Email</label>
-                  <input type="email" name="emai" id="email" class="form-control" placeholder="Email Address">
+                  <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
                 </div>
               </div>
 
 
-              <div class="row form-group">
-                <div class="col-md-12 mb-3 mb-md-0">
-                  <label class="font-weight-bold" for="phone">Phone</label>
-                  <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone #">
-                </div>
-              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                 <input type="password" class="form-control" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
+                  <small class="text-muted" id="passwordHelp">password must match confirmation below</small>
+       </div>
 
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="font-weight-bold" for="content">Message</label>
-                  <textarea name="content" id="message" cols="30" rows="5" class="form-control" placeholder="Send us a meesage"></textarea>
-                </div>
-              </div>
+       <div class="form-group">
+         <label for="passwordConfirmation">Password confirmation</label>
+         <input type="password" class="form-control" name="passwordConfirmation" aria-describedby="passwordHelp" placeholder="Enter password confirmation">
+       </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
