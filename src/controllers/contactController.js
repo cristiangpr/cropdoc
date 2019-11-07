@@ -22,9 +22,13 @@ module.exports = {
     console.log('sendmail');
     if (error) {
       console.log('contact-failure');
+      res.render('contact-failure');
+         res.redirect(500, "/messages/new");
     }
     else {
       console.log('contact-success');
+      res.render('contact-success');
+         res.redirect(303, `/`);
     }
   });
 }
